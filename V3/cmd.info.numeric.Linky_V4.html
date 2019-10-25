@@ -1,18 +1,18 @@
 <div class="cmd cmd-widget #history# widget-Linky_V4" data-type="info" data-subtype="numeric" data-template="Linky_V4" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" data-eqLogic_id="#eqLogic_id#">
-  <img class="Linky_V4-background" height=288px width=256px src="data/customTemplates/dashboard/cmd.info.numeric.Linky_V4/LinkyV4.png">
+  <img class="Linky_V4-background" height=288px width=256px src="plugins/widget/core/template//dashboard/cmd.info.numeric.Linky_V4/LinkyV4.png">
   <span class="led_cligno#id#"></span>
-  <div class="annualName fontName value">ANNUEL</div>
-  <div class="annual fontDigital value"></div><div class="annualUnite fontUnite value">KWH</div>
-  <div class="monthlyName fontName value">MENSUEL</div>
-  <div class="monthly fontDigital value"></div><div class="monthlyUnite fontUnite value">KWH</div>
-  <div class="dayName fontName value">QUOTIDIEN</div>
-  <div class="day fontDigital value"></div><div class="dayUnite fontUnite value">KWH</div>
-  <div class="hourName fontName value">HEURE</div>
-  <div class="hour fontDigital value"></div><div class="hourUnite fontUnite value">KW</div>
+  <div class="annualName fontName">ANNUEL</div>
+  <div class="annual fontDigital"></div><div class="annualUnite fontUnite">KWH</div>
+  <div class="monthlyName fontName">MENSUEL</div>
+  <div class="monthly fontDigital"></div><div class="monthlyUnite fontUnite">KWH</div>
+  <div class="dayName fontName">QUOTIDIEN</div>
+  <div class="day fontDigital"></div><div class="dayUnite fontUnite">KWH</div>
+  <div class="hourName fontName">HEURE</div>
+  <div class="hour fontDigital"></div><div class="hourUnite fontUnite">KW</div>
   <style>
     @font-face {
       font-family: "Digital-7";
-      src:  url("data/customTemplates/dashboard/cmd.info.numeric.Linky_V4/font/digital-7.ttf") format("truetype");
+      src:  url("plugins/widget/core/template/dashboard/cmd.info.numeric.Linky_V4/font/digital-7.ttf") format("truetype");
     }
     span.led_cligno#id# {
       width: 10px;
@@ -36,6 +36,7 @@
       font-size:22px;
       width:60%;
       text-align:right;
+      font-weight:bold!important;
     }
     .widget-Linky_V4 div.fontName{
       font-family: "Digital-7";
@@ -43,6 +44,8 @@
       color:#505050;
       letter-spacing: 1px;
       font-size:16px;
+      width:100%;
+      font-weight:bold!important;
     }
     .widget-Linky_V4 div.fontUnite{
       font-family: "Digital-7";
@@ -53,42 +56,43 @@
       width:40%;
       left:61%;
       text-align:left;
+      font-weight:bold!important;
     }
     .widget-Linky_V4 div.annualName {
-      top:83px;
+      top:78px;
     }
     .widget-Linky_V4 div.annual {
-      top:99px;
+      top:89px;
     }
     .widget-Linky_V4 div.annualUnite {
-      top:101px;
+      top:96px;
     }
     .widget-Linky_V4 div.monthlyName {
-      top:119px;
+      top:114px;
     }
     .widget-Linky_V4 div.monthly {
-      top: 135px;
+      top: 125px;
     }
     .widget-Linky_V4 div.monthlyUnite {
-      top: 137px;
+      top: 132px;
     }
     .widget-Linky_V4 div.dayName {
-      top:155px;
+      top:150px;
     }
     .widget-Linky_V4 div.day {
-      top: 171px;
+      top: 161px;
     }
     .widget-Linky_V4 div.dayUnite {
-      top:173px;
+      top:168px;
     }
     .widget-Linky_V4 div.hourName {
-      top:191px;
+      top:186px;
     }
     .widget-Linky_V4 div.hour {
-      top:207px;
+      top:197px;
     }
     .widget-Linky_V4 div.hourUnite {
-      top:209px;
+      top:204px;
     }
   </style>
   <script>
