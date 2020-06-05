@@ -1,0 +1,118 @@
+<div class="cmd cmd-widget #history# widget-Linky_V4" data-type="info" data-subtype="numeric" data-template="Linky_V4" data-cmd_id="#id#" data-cmd_uid="#uid#" data-version="#version#" data-eqLogic_id="#eqLogic_id#">
+  <img class="Linky_V4-background" height=288px width=256px src="plugins/pimpJeedom/core/template/dashboard/cmd.info.numeric.Linky/LinkyV4.png">
+  <span class="led_cligno#id#"></span>
+  <div class="annualName fontName value">ANNUEL</div>
+  <div class="annual fontDigital value"></div><div class="annualUnite fontUnite value">KWH</div>
+  <div class="monthlyName fontName value">MENSUEL</div>
+  <div class="monthly fontDigital value"></div><div class="monthlyUnite fontUnite value">KWH</div>
+  <div class="dayName fontName value">QUOTIDIEN</div>
+  <div class="day fontDigital value"></div><div class="dayUnite fontUnite value">KWH</div>
+  <div class="hourName fontName value">HEURE</div>
+  <div class="hour fontDigital value"></div><div class="hourUnite fontUnite value">KW</div>
+  <style>
+    @font-face {
+      font-family: "Digital-7";
+      src:  url("plugins/pimpJeedom/core/template/dashboard/cmd.info.numeric.Linky/digital-7.ttf") format("truetype");
+    }
+    span.led_cligno#id# {
+      width: 10px;
+      height: 10px;
+      -webkit-animation: cligno 2s infinite;
+      animation: cligno 2s infinite;
+      position: absolute;
+  	  top:5px;
+  	  left:48%;
+  	  z-index:-1;
+	}
+    @-webkit-keyframes cligno {
+      from {background-color: lime;}
+      to {background-color: #181818;}
+	}
+    .widget-Linky_V4 div.fontDigital{
+      font-family: "Digital-7";
+      position:absolute;
+      color:#000000;
+      letter-spacing: 2px;
+      font-size:22px;
+      width:60%;
+      text-align:right;
+    }
+    .widget-Linky_V4 div.fontName{
+      font-family: "Digital-7";
+      position:absolute;
+      color:#505050;
+      letter-spacing: 1px;
+      font-size:16px;
+    }
+    .widget-Linky_V4 div.fontUnite{
+      font-family: "Digital-7";
+      position:absolute;
+      color:#505050;
+      letter-spacing: 1px;
+      font-size:16px;
+      width:40%;
+      left:61%;
+      text-align:left;
+    }
+    .widget-Linky_V4 div.annualName {
+      top:83px;
+    }
+    .widget-Linky_V4 div.annual {
+      top:99px;
+    }
+    .widget-Linky_V4 div.annualUnite {
+      top:101px;
+    }
+    .widget-Linky_V4 div.monthlyName {
+      top:119px;
+    }
+    .widget-Linky_V4 div.monthly {
+      top: 135px;
+    }
+    .widget-Linky_V4 div.monthlyUnite {
+      top: 137px;
+    }
+    .widget-Linky_V4 div.dayName {
+      top:155px;
+    }
+    .widget-Linky_V4 div.day {
+      top: 171px;
+    }
+    .widget-Linky_V4 div.dayUnite {
+      top:173px;
+    }
+    .widget-Linky_V4 div.hourName {
+      top:191px;
+    }
+    .widget-Linky_V4 div.hour {
+      top:207px;
+    }
+    .widget-Linky_V4 div.hourUnite {
+      top:209px;
+    }
+  </style>
+  <script>
+    jeedom.cmd.update['#id#'] = function(_options){
+      var valeur = parseFloat(_options.display_value);
+      var widget = $('.cmd[data-cmd_id=#id#]').closest('.eqLogic').find('.widget-Linky_V4:first');
+      if('#name#' == 'Conso Annuelle'){
+        widget.find('.annual').text(valeur.toFixed(1)).attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
+      }
+      if('#name#' == 'Conso Mensuelle'){
+        widget.find('.monthly').text(valeur.toFixed(1)).attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
+      }
+      if('#name#' == 'Conso Jour'){
+        widget.find('.day').text(valeur.toFixed(1)).attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
+      }
+      if('#name#' == 'Conso Horaire'){
+        widget.find('.hour').text(valeur.toFixed(2)).attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
+      }
+    }
+    jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#'});
+setTimeout(function(){
+      if($('.cmd[data-cmd_id=#id#]').closest('.eqLogic').find('.widget-Linky_V4').length > 1){
+        $('.cmd[data-cmd_id=#id#]').closest('.eqLogic').find('.widget-Linky_V4:not(:first)').hide();
+      }
+    },100)
+  </script>
+</div>
